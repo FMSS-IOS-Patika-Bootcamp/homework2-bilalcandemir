@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// This is our model to add some data in array
 struct News {
     var image:String
     var newsTitle:String

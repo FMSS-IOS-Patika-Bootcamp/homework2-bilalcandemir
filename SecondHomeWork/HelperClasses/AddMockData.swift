@@ -7,9 +7,10 @@
 
 import Foundation
 
+///Write extension for long process to don't give bad look to view controller
 extension ViewController {
     
-    
+    /// Add some mock data to show our cell and news in controller
     func addMockData(){
         var newsData = News(image: "imageCar", newsTitle: "ÖTV Vergi İndiriminde Şok Gelişme!", newsDescription: "Resmi Gazete'de yayınlanan ÖTV düzenlenmesi araç fiyatlarında ÖTV indirimi beklentisini oluşturdu.", newsURL:"https://www.haberturk.com/araclarda-otv-indirimi-olacak-mi-2022-otv-indirimi-ne-zaman-gelecek-ikinci-el-otomobil-fiyatlarina-nasil-yansiyacak-3484277/2")
         newsArray.append(newsData)

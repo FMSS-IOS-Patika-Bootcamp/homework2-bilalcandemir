@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// This protocol created for data sharing view controller to detail view controller
 protocol DataShare {
     func loadData() -> News
 }

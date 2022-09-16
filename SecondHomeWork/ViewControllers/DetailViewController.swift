@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
         
         navBarConfigurations()
         
+        /// Change some ui of show detail button
         showDetailButton.backgroundColor = UIColor.clear
         showDetailButton.tintColor = UIColor.white
         showDetailButton.layer.cornerRadius = 5
@@ -31,6 +32,8 @@ class DetailViewController: UIViewController {
         showDetailButton.layer.borderColor = UIColor.gray.cgColor
         
         setData()
+        
+        /// Change navigation bar title with label title
         self.title = controllerTitle
     }
     
@@ -40,8 +43,12 @@ class DetailViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
+    /// This function get our data from view controller with delegate
     func setData(){
+        /// when you look to loadData function you will see the return
         let data:News = (delegate?.loadData())!
+        
+        ///Change data with the data which came from view controller
         newsImageView.image = UIImage(named: data.image)
         newsTitleLabel.text = data.newsTitle
         newsDescriptionLabel.text = data.newsDescription
@@ -49,15 +56,12 @@ class DetailViewController: UIViewController {
         self.controllerTitle = data.newsTitle
     }
     
+    /// When user tap to news detail button we will show web view
     @IBAction func showDetailPressed(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "NewsWebViewController") as! NewsWebViewController
         vc.newsURL = self.newsURL
+        
+        /// This is for just show us on controller don't push from navigation controller
         self.present(vc, animated: true, completion: nil)
-        
-        
-        //        let newsWebViewController = storyboard?.instantiateViewController(identifier: "NewsWebViewController") as! NewsWebViewController
-        //
-        //        navigationController?.pushViewController(newsWebViewController, animated: true)
     }
-    
 }
